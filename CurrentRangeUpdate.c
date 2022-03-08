@@ -23,7 +23,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
     printf("***********************************\n");
     printf("Range, Readings\n");
     for(int j = 0; j<CurrentRange_Count; j++){
-        printf("%d - %d, %d\n", CurrentRangesWithCount[CurrentRange_Count][0], CurrentRangesWithCount[CurrentRange_Count][1], CurrentRangesWithCount[CurrentRange_Count][2]);
+        printf("%d - %d, %d\n", CurrentRangesWithCount[j][0], CurrentRangesWithCount[j][1], CurrentRangesWithCount[j][2]);
     } 
     return CurrentRange_Count;
 }
