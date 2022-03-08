@@ -11,7 +11,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
            (CurrentRange_curr == CurrentRange_prev+1))
            {
                 CurrentRangesWithCount[CurrentRange_Count - 1][1] = CurrentRange_curr;
-                CurrentRangesWithCount[CurrentRange_Count][2] += 1;
+                CurrentRangesWithCount[CurrentRange_Count][2]++;
            }
         else{
             CurrentRangesWithCount[CurrentRange_Count][0] = CurrentRange_curr;
