@@ -1,3 +1,6 @@
+#include "CurrentRangeUpdate.h"
+#include <stdio.h>
+
 int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
     int CurrentRange_prev = 0, CurrentRange_curr = 0;
