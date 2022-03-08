@@ -4,7 +4,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
     for(int i =0; i<samples; i++){
         CurrentRange_curr = CurrentValues[i];
         if((CurrentRange_curr == CurrentRange_prev) || 
-           (CurrentRange_curr+1 == CurrentRange_prev))
+           (CurrentRange_curr == CurrentRange_prev+1))
            {
 
 
