@@ -9,6 +9,6 @@ TEST_CASE("Checks if count is updated with single continuous range of current va
 }
 
 TEST_CASE("Checks if range and count is updated with multiple range of sorted current values") {
-    int CurrentValues[] = {3,3,4,5,7,8,10,11,11,12};
-	CHECK(CurrentRangeUpdate(CurrentValues, 10) == 3);
+    int CurrentValues[] = {3,3,4,5,7,8,10,11};
+	CHECK(CurrentRangeUpdate(CurrentValues, 8) == 3);
 }
