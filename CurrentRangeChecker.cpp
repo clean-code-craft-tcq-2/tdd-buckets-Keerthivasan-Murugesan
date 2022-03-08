@@ -9,6 +9,6 @@ TEST_CASE("Checks if count is updated with single continuous range of current va
 }
 
 TEST_CASE("Checks if range and count is updated with multiple range of sorted current values") {
-    int CurrentValues[] = {2,2,2,3,3,4,6,6,7,8,8,9,9,10};
-	REQUIRE(CurrentRangeUpdate(CurrentValues, 14) == 2);
+    int CurrentValues[] = {2,2,2,3,3,4,6,6,7,8,8,9,9,10,14};
+	REQUIRE(CurrentRangeUpdate(CurrentValues, 15) == 3);
 }
