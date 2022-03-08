@@ -1,0 +1,1 @@
+int CurrentRangeUpdate (int* CurrentValues, int samples);
