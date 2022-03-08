@@ -22,6 +22,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
         CurrentRange_prev = CurrentRange_curr;
     }
     printf("***********************************\n");
+    printf("Current values range count = %d\n", CurrentRange_Count);
     printf("Range, Readings\n");
     for(int j = 0; j<CurrentRange_Count; j++){
         printf("%d - %d, %d\n", CurrentRangesWithCount[j][0], CurrentRangesWithCount[j][1], CurrentRangesWithCount[j][2]);
