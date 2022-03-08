@@ -15,6 +15,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
            }
         else{
             CurrentRangesWithCount[CurrentRange_Count][0] = CurrentRange_curr;
+            CurrentRangesWithCount[CurrentRange_Count][1] = CurrentRange_curr;
             CurrentRangesWithCount[CurrentRange_Count][2] = 1;
             CurrentRange_Count++;
         }
