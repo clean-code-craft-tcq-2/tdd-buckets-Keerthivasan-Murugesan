@@ -1,10 +1,12 @@
 #include "CurrentRangeUpdate.h"
 #include <stdio.h>
 
+int CurrentRangesWithCount[][3];
+
 int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
     int CurrentRange_prev = 0, CurrentRange_curr = 0;
-    int CurrentRangesWithCount[2][3] = {0};
+
     for(int i =0; i<samples; i++){
         CurrentRange_curr = CurrentValues[i];
         if((CurrentRange_curr == CurrentRange_prev) || 
