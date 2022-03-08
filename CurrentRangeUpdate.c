@@ -1,7 +1,7 @@
 #include "CurrentRangeUpdate.h"
 #include <stdio.h>
 
-int CurrentRangesWithCount[][3];
+int CurrentRangesWithCount[][3] = {0};
 
 int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
