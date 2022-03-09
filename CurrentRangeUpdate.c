@@ -3,7 +3,7 @@
 
 int CurrentRangesWithCount[][3] = {0};
 
-int CurrentRangeUpdate (int* CurrentValues, int samples){
+int** CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
     int CurrentRange_prev = 0, CurrentRange_curr = 0;
     int* CurrentValues_sorted;
@@ -28,7 +28,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
     }
 
     PrintonConsole(CurrentRange_Count, CurrentRangesWithCount);
-    return CurrentRange_Count;
+    return CurrentRangesWithCount;
 }
 
 int* Sort_CurrentValues(int* CurrentValues, int samples){
