@@ -6,12 +6,12 @@ int CurrentRangesWithCount[][3] = {0};
 int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
     int CurrentRange_prev = 0, CurrentRange_curr = 0;
-    int CurrentValues_sorted[] = {0};
+    int* CurrentValues_sorted;
 
-    *CurrentValues_sorted = Sort_CurrentValues(CurrentValues, samples);
+    CurrentValues_sorted = Sort_CurrentValues(CurrentValues, samples);
 
     for(int i =0; i<samples; i++){
-        CurrentRange_curr = CurrentValues_sorted[i];
+        CurrentRange_curr = *(CurrentValues_sorted+i);
         if((CurrentRange_curr == CurrentRange_prev) || 
            (CurrentRange_curr == CurrentRange_prev+1))
            {
