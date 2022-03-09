@@ -2,7 +2,7 @@
 
 #include "test/catch.hpp"
 #include "CurrentRangeUpdate.h"
-/*
+
 TEST_CASE("Checks if number of ranges is updated with single continuous range of current values") {
     int CurrentValues[] = {4,5};
 	REQUIRE(CurrentRangeUpdate(CurrentValues, 2) == 1);
@@ -16,16 +16,16 @@ TEST_CASE("Checks if number of ranges is updated with multiple range of sorted c
 TEST_CASE("Checks if number of ranges is updated with multiple range of unsorted current values") {
     int CurrentValues[] = {3,5,4,2,3,10,7,11,6,12};
 	REQUIRE(CurrentRangeUpdate(CurrentValues, 10) == 2);
-}*/
-
+}
+/*
 TEST_CASE("Checks if range and count is updated with multiple range of unsorted current values") {
     int CurrentValues[] = {3,5,4,2,3,10,7,11,6,12};
     int expectedOutput[2][3] = {{2,7,7}, {10,12,3}};
-    int** CurrentRangeOutput = CurrentRangeUpdate(CurrentValues, 10);
+    int (*CurrentRangeOutput)[3] = CurrentRangeUpdate(CurrentValues, 10);
 
     for(int i = 0; i<2; i++){
         for(int j = 0; j<3; j++){
             REQUIRE(expectedOutput[i][j] == *(*(CurrentRangeOutput+i)+j));
         }
     }
-}
+}*/

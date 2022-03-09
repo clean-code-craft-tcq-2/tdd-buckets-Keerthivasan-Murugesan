@@ -3,7 +3,7 @@
 
 int CurrentRangesWithCount[][3] = {0};
 
-int** CurrentRangeUpdate (int* CurrentValues, int samples){
+int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
     int CurrentRange_prev = 0, CurrentRange_curr = 0;
     int* CurrentValues_sorted;
@@ -27,8 +27,8 @@ int** CurrentRangeUpdate (int* CurrentValues, int samples){
         CurrentRange_prev = CurrentRange_curr;
     }
 
-    PrintonConsole(CurrentRange_Count, CurrentRangesWithCount);
-    return CurrentRangesWithCount;
+    PrintonConsole(CurrentRange_Count);
+    return CurrentRange_Count;
 }
 
 int* Sort_CurrentValues(int* CurrentValues, int samples){
@@ -49,7 +49,7 @@ int* Sort_CurrentValues(int* CurrentValues, int samples){
     return CurrentValues;
 }
 
-void PrintonConsole(int CurrentRange_Count, int (*CurrentRangesWithCount)[3]){
+void PrintonConsole(int CurrentRange_Count){
     printf("***********************************\n");
     printf("Current values range count = %d\n", CurrentRange_Count);
     printf("Range, Readings\n");
