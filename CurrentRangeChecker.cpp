@@ -15,5 +15,5 @@ TEST_CASE("Checks if range and count is updated with multiple range of sorted cu
 
 TEST_CASE("Checks if range and count is updated with multiple range of unsorted current values") {
     int CurrentValues[] = {3,5,4,2,3,10,7,11,6,12};
-	REQUIRE(CurrentRangeUpdate(CurrentValues, 10) == 3);
+	REQUIRE(CurrentRangeUpdate(CurrentValues, 10) == 2);
 }
