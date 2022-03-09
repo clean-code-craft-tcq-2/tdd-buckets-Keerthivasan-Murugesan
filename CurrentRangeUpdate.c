@@ -8,7 +8,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_prev = 0, CurrentRange_curr = 0;
     int CurrentValues_sorted[] = {0};
 
-    CurrentValues_sorted = Sort_CurrentValues(CurrentValues, samples);
+    *CurrentValues_sorted = Sort_CurrentValues(CurrentValues, samples);
 
     for(int i =0; i<samples; i++){
         CurrentRange_curr = CurrentValues_sorted[i];
@@ -33,22 +33,20 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
 
 int* Sort_CurrentValues(int* CurrentValues, int samples){
     int temp;
-    int CurrentValues_sorted[] = {0};
 
-    CurrentValues_sorted = CurrentValues;
     for(int i = 0; i<samples; i++)
     {
         for(int j = 0; j<samples; j++)
         {
-            if(CurrentValues_sorted[j] > CurrentValues_sorted[j+1])
+            if(CurrentValues[j] > CurrentValues[j+1])
             {
-                temp = CurrentValues_sorted[j];
-                CurrentValues_sorted[j] = CurrentValues_sorted[j+1];
-                CurrentValues_sorted[j+1] = temp;
+                temp = CurrentValues[j];
+                CurrentValues[j] = CurrentValues[j+1];
+                CurrentValues[j+1] = temp;
             }
         }
     }
-    return CurrentValues_sorted;
+    return CurrentValues;
 }
 
 void PrintonConsole(int CurrentRange_Count, int (*CurrentRangesWithCount)[3]){
