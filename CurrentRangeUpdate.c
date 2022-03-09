@@ -36,7 +36,7 @@ int* Sort_CurrentValues(int* CurrentValues, int samples){
 
     for(int i = 0; i<samples; i++)
     {
-        for(int j = 0; j<samples; j++)
+        for(int j = 0; j<samples-1; j++)
         {
             if(CurrentValues[j] > CurrentValues[j+1])
             {
