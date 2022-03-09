@@ -6,7 +6,7 @@ int CurrentRangesWithCount[][3] = {0};
 int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
     int CurrentRange_prev = 0, CurrentRange_curr = 0;
-    int CurrentValues_sorted[];
+    int CurrentValues_sorted[] = {0};
 
     CurrentValues_sorted = Sort_CurrentValues(CurrentValues, samples);
 
@@ -26,18 +26,14 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
         }
         CurrentRange_prev = CurrentRange_curr;
     }
-    printf("***********************************\n");
-    printf("Current values range count = %d\n", CurrentRange_Count);
-    printf("Range, Readings\n");
-    for(int j = 0; j<CurrentRange_Count; j++){
-        printf("%d - %d, %d\n", CurrentRangesWithCount[j][0], CurrentRangesWithCount[j][1], CurrentRangesWithCount[j][2]);
-    } 
+    
+    PrintonConsole(CurrentRange_Count, CurrentRangesWithCount);
     return CurrentRange_Count;
 }
 
 int Sort_CurrentValues(int* CurrentValues, int samples){
     int temp;
-    int CurrentValues_sorted[];
+    int CurrentValues_sorted[]] = {0};
 
     CurrentValues_sorted = CurrentValues;
     for(int i = 0; i<samples; i++)
@@ -53,4 +49,13 @@ int Sort_CurrentValues(int* CurrentValues, int samples){
         }
     }
     return CurrentValues_sorted;
+}
+
+void PrintonConsole(int CurrentRange_Count, int* CurrentRangesWithCount){
+    printf("***********************************\n");
+    printf("Current values range count = %d\n", CurrentRange_Count);
+    printf("Range, Readings\n");
+    for(int j = 0; j<CurrentRange_Count; j++){
+        printf("%d - %d, %d\n", CurrentRangesWithCount[j][0], CurrentRangesWithCount[j][1], CurrentRangesWithCount[j][2]);
+    }
 }
