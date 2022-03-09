@@ -31,7 +31,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
     return CurrentRange_Count;
 }
 
-int Sort_CurrentValues(int* CurrentValues, int samples){
+int* Sort_CurrentValues(int* CurrentValues, int samples){
     int temp;
     int CurrentValues_sorted[] = {0};
 
@@ -51,7 +51,7 @@ int Sort_CurrentValues(int* CurrentValues, int samples){
     return CurrentValues_sorted;
 }
 
-void PrintonConsole(int CurrentRange_Count, int* CurrentRangesWithCount){
+void PrintonConsole(int CurrentRange_Count, int (*CurrentRangesWithCount)[3]){
     printf("***********************************\n");
     printf("Current values range count = %d\n", CurrentRange_Count);
     printf("Range, Readings\n");
