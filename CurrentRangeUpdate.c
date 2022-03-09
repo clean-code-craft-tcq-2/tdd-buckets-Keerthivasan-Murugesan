@@ -26,14 +26,14 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
         }
         CurrentRange_prev = CurrentRange_curr;
     }
-    
+
     PrintonConsole(CurrentRange_Count, CurrentRangesWithCount);
     return CurrentRange_Count;
 }
 
 int Sort_CurrentValues(int* CurrentValues, int samples){
     int temp;
-    int CurrentValues_sorted[]] = {0};
+    int CurrentValues_sorted[] = {0};
 
     CurrentValues_sorted = CurrentValues;
     for(int i = 0; i<samples; i++)
