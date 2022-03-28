@@ -3,15 +3,15 @@
 #include "CurrentRangeUpdate.h"
 
 
-int BinaryToDecimalConverter(int 12bitA2D){
+int BinaryToDecimalConverter(int A2D12bit){
     int dec, i, rem;
     dec = 0;
     i = 0;
 
-    while(12bitA2D != 0){
-        rem = 12bitA2D % 10;
-        12bitA2D /= 10;
-        dec += rem*pow(2*i);
+    while(A2D12bit != 0){
+        rem = A2D12bit % 10;
+        A2D12bit /= 10;
+        dec += rem*pow(2, i);
         i++;
     }
     return dec;
@@ -27,7 +27,7 @@ int A2DinputScaler(int currentvalue){
 }
 
 int* ConvertCurrentValuestoDecimal(int* CurrentValues, int samples){
-    int temp, CurrentRangeCount;
+    int temp;
     int CurrentValues_dec[] = {0};
     for(int i = 0; i<samples; i++)
     {
@@ -39,6 +39,7 @@ int* ConvertCurrentValuestoDecimal(int* CurrentValues, int samples){
 
 int CurrentRangeUpdate_Binary (int* CurrentValues, int samples){
     int* CurrentValues_converted;
+    int CurrentRangeCount;
 
     CurrentValues_converted = ConvertCurrentValuestoDecimal(CurrentValues, samples);
     CurrentRangeCount = CurrentRangeUpdate(CurrentValues_converted, samples);
