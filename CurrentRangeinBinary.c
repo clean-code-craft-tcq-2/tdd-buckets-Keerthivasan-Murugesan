@@ -3,7 +3,7 @@
 #include "CurrentRangeUpdate.h"
 
 
-int BinaryToDecimalConverter(int A2D12bit){
+int BinaryToDecimalConverter(unsigned long long int A2D12bit){
     int dec, i, rem;
     dec = 0;
     i = 0;
