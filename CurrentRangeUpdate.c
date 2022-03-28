@@ -12,6 +12,7 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
 
     for(int i =0; i<samples; i++){
         CurrentRange_curr = *(CurrentValues_sorted+i);
+        printf("%d/\n", CurrentRange_curr);
         if((CurrentRange_curr == CurrentRange_prev) || 
            (CurrentRange_curr == CurrentRange_prev+1))
            {
