@@ -28,7 +28,7 @@ int A2DinputScaler(int currentvalue){
 
 int* ConvertCurrentValuestoDecimal(long int* CurrentValues, int samples){
     int temp;
-    static int CurrentValues_dec;
+    static int CurrentValues_dec[] = {0};
     for(int i = 0; i<samples; i++)
     {
         temp = BinaryToDecimalConverter(CurrentValues[i]);
