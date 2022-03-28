@@ -26,7 +26,7 @@ int A2DinputScaler(int currentvalue){
     return Scaledvalue;
 }
 
-int* ConvertCurrentValuestoDecimal(long int* CurrentValues, int samples){
+int* ConvertCurrentValuestoDecimal(unsigned long int* CurrentValues, int samples){
     int temp;
     static int CurrentValues_dec[] = {0};
     for(int i = 0; i<samples; i++)
@@ -37,7 +37,7 @@ int* ConvertCurrentValuestoDecimal(long int* CurrentValues, int samples){
     return CurrentValues_dec;
 }
 
-int CurrentRangeUpdate_Binary (long int* CurrentValues, int samples){
+int CurrentRangeUpdate_Binary (unsigned long int* CurrentValues, int samples){
     int* CurrentValues_converted;
     int CurrentRangeCount;
 
