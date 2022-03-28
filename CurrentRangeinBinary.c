@@ -33,6 +33,7 @@ int* ConvertCurrentValuestoDecimal(unsigned long long int* CurrentValues, int sa
     {
         temp = BinaryToDecimalConverter(CurrentValues[i]);
         CurrentValues_dec[i] = A2DinputScaler(temp);
+        printf("%d , %d\n",temp,CurrentValues_dec[i]);
     }
     return CurrentValues_dec;
 }
