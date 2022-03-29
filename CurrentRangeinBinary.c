@@ -7,15 +7,18 @@ int A2DinputScaler(int currentvalue){
     float currentconverted;
     int Scaledvalue;
 
-    currentconverted = (currentvalue * 10) / 4094;
+    currentconverted = (currentvalue * 10.0) / 4094;
     Scaledvalue = (int)(currentconverted < 0 ? (currentconverted-0.5) : (currentconverted+0.5));
     return Scaledvalue;
 }
 
-int* ConvertCurrentValuestoDecimal(int* CurrentValues, int samples){;
+int* ConvertCurrentValuestoDecimal(int* CurrentValues, int samples){
     for(int i = 0; i<samples; i++)
     {
-        CurrentValues[i] = A2DinputScaler(CurrentValues[i]);
+        if(CurrentValues[i] != 4095){
+            CurrentValues[i] = A2DinputScaler(CurrentValues[i]);
+        }
+
     }
     return CurrentValues;
 }

@@ -5,31 +5,30 @@ int CurrentRangesWithCount[][3] = {0};
 
 int CurrentRangeUpdate (int* CurrentValues, int samples){
     int CurrentRange_Count = 0;
-    int CurrentRange_prev = 0, CurrentRange_curr = 0;
+    int CurrentRange_prev, CurrentRange_curr;
     int* CurrentValues_sorted;
 
     CurrentValues_sorted = Sort_CurrentValues(CurrentValues, samples);
+    CurrentRange_prev = *(CurrentValues_sorted+(samples-1));
 
     for(int i =0; i<samples; i++){
         CurrentRange_curr = *(CurrentValues_sorted+i);
-        printf("%d/\n", CurrentRange_curr);
-        if((CurrentRange_curr != 0) && ((CurrentRange_curr == CurrentRange_prev) || 
-           (CurrentRange_curr == CurrentRange_prev+1)))
+
+        if(CurrentRange_curr != 4095)
         {
-            CurrentRangesWithCount[CurrentRange_Count - 1][1] = CurrentRange_curr;
-            CurrentRangesWithCount[CurrentRange_Count - 1][2]++;
-        }
-        else if((CurrentRange_curr == 0) && (CurrentRange_Count == 1))
-        {
-            CurrentRangesWithCount[CurrentRange_Count - 1][1] = CurrentRange_curr;
-            CurrentRangesWithCount[CurrentRange_Count - 1][2]++;
-        }
-        else
-        {
-            CurrentRangesWithCount[CurrentRange_Count][0] = CurrentRange_curr;
-            CurrentRangesWithCount[CurrentRange_Count][1] = CurrentRange_curr;
-            CurrentRangesWithCount[CurrentRange_Count][2] = 1;
-            CurrentRange_Count++;
+            if((CurrentRange_curr == CurrentRange_prev) || 
+                (CurrentRange_curr == CurrentRange_prev+1))
+            {
+                CurrentRangesWithCount[CurrentRange_Count - 1][1] = CurrentRange_curr;
+                CurrentRangesWithCount[CurrentRange_Count - 1][2]++;
+            }
+            else
+            {
+                CurrentRangesWithCount[CurrentRange_Count][0] = CurrentRange_curr;
+                CurrentRangesWithCount[CurrentRange_Count][1] = CurrentRange_curr;
+                CurrentRangesWithCount[CurrentRange_Count][2] = 1;
+                CurrentRange_Count++;
+            }
         }
         CurrentRange_prev = CurrentRange_curr;
     }
