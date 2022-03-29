@@ -18,12 +18,11 @@ int* ConvertCurrentValuestoDecimal(int* CurrentValues, int samples){
         if(CurrentValues[i] != 4095){
             CurrentValues[i] = A2DinputScaler(CurrentValues[i]);
         }
-
     }
     return CurrentValues;
 }
 
-int CurrentRangeUpdate_Binary (int* CurrentValues, int samples){
+int CurrentRangeUpdate_A2D (int* CurrentValues, int samples){
     int CurrentRangeCount;
 
     ConvertCurrentValuestoDecimal(CurrentValues, samples);

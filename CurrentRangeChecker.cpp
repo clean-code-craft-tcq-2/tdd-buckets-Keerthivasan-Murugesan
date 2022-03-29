@@ -32,5 +32,10 @@ TEST_CASE("Checks if range and count is updated with multiple range of unsorted 
 
 TEST_CASE("Checks if number of ranges is updated with current values from 12-bit A2D converter") {
     int CurrentValues[] = {0,340,670,1200,1580,2670,3568,4094};
-	REQUIRE(CurrentRangeUpdate_Binary(CurrentValues, 8) == 4);
+	REQUIRE(CurrentRangeUpdate_A2D(CurrentValues, 8) == 3);
+}
+
+TEST_CASE("Checks if error reading in current range is ignored") {
+    int CurrentValues[] = {0,340,670,1200,1580,2670,3568,4094, 4095, 4095};
+	REQUIRE(CurrentRangeUpdate_A2D(CurrentValues, 10) == 3);
 }
