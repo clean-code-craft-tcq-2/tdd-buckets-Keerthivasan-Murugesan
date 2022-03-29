@@ -31,6 +31,6 @@ TEST_CASE("Checks if range and count is updated with multiple range of unsorted 
 }
 
 TEST_CASE("Checks if number of ranges is updated with current values from 12-bit A2D converter") {
-    unsigned long long int CurrentValues[] = {011010, 01101101, 10110110, 111011101110, 00100100101, 1101, 101010101010, 011111111111};
+    int CurrentValues[] = {0,340,670,1200,1580,2670,3568,4094};
 	REQUIRE(CurrentRangeUpdate_Binary(CurrentValues, 8) == 2);
 }
