@@ -13,8 +13,8 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
     for(int i =0; i<samples; i++){
         CurrentRange_curr = *(CurrentValues_sorted+i);
         printf("%d/\n", CurrentRange_curr);
-        if((CurrentRange_curr == CurrentRange_prev) || 
-           (CurrentRange_curr == CurrentRange_prev+1))
+        if((CurrentRange_curr != 0) && ((CurrentRange_curr == CurrentRange_prev) || 
+           (CurrentRange_curr == CurrentRange_prev+1)))
            {
                 CurrentRangesWithCount[CurrentRange_Count - 1][1] = CurrentRange_curr;
                 CurrentRangesWithCount[CurrentRange_Count - 1][2]++;
