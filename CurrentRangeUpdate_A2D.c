@@ -18,6 +18,9 @@ int* ConvertCurrentValuestoDecimal(int* CurrentValues, int samples){
         if(CurrentValues[i] != 4095){
             CurrentValues[i] = A2DinputScaler(CurrentValues[i]);
         }
+        else{
+            CurrentValues[i] = 0;
+        }
     }
     return CurrentValues;
 }

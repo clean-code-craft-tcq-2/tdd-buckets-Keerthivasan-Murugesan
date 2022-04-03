@@ -14,22 +14,20 @@ int CurrentRangeUpdate (int* CurrentValues, int samples){
     for(int i =0; i<samples; i++){
         CurrentRange_curr = *(CurrentValues_sorted+i);
 
-        if(CurrentRange_curr != 4095)
+        if((CurrentRange_curr == CurrentRange_prev) || 
+            (CurrentRange_curr == CurrentRange_prev+1))
         {
-            if((CurrentRange_curr == CurrentRange_prev) || 
-                (CurrentRange_curr == CurrentRange_prev+1))
-            {
-                CurrentRangesWithCount[CurrentRange_Count - 1][1] = CurrentRange_curr;
-                CurrentRangesWithCount[CurrentRange_Count - 1][2]++;
-            }
-            else
-            {
-                CurrentRangesWithCount[CurrentRange_Count][0] = CurrentRange_curr;
-                CurrentRangesWithCount[CurrentRange_Count][1] = CurrentRange_curr;
-                CurrentRangesWithCount[CurrentRange_Count][2] = 1;
-                CurrentRange_Count++;
-            }
+            CurrentRangesWithCount[CurrentRange_Count - 1][1] = CurrentRange_curr;
+            CurrentRangesWithCount[CurrentRange_Count - 1][2]++;
         }
+        else
+        {
+            CurrentRangesWithCount[CurrentRange_Count][0] = CurrentRange_curr;
+            CurrentRangesWithCount[CurrentRange_Count][1] = CurrentRange_curr;
+            CurrentRangesWithCount[CurrentRange_Count][2] = 1;
+            CurrentRange_Count++;
+        }
+
         CurrentRange_prev = CurrentRange_curr;
     }
 
